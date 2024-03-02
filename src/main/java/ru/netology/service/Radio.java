@@ -2,9 +2,11 @@ package ru.netology.service;
 
 public class Radio {
     public int currentVolume;
+
     public int getCurrentVolume() {
         return currentVolume;
     }
+
     public void setCurrentVolume(int newCurrentVolume) {
         if (newCurrentVolume > 100) {
             return;
@@ -14,26 +16,36 @@ public class Radio {
         }
         currentVolume = newCurrentVolume;
     }
+
     public void increaseVolume() {
         if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
+        if (currentVolume == 100) {
+            return;
+        }
     }
+
     public void reduceVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         }
+        if (currentVolume == 0) {
+            return;
+        }
     }
+
     public void setToMaxVolum() {
         currentVolume = 100;
     }
 
 
-
     public int currentWave;
+
     public int getCurrentWave() {
         return currentWave;
     }
+
     public void setCurrentWave(int newCurrentWave) {
         if (newCurrentWave > 9) {
             return;
@@ -43,14 +55,21 @@ public class Radio {
         }
         currentWave = newCurrentWave;
     }
+
     public void increaseWave() {
         if (currentWave < 9) {
             currentWave = currentWave + 1;
+        }
+        if (currentWave == 9) {
+            return;
         }
     }
     public void reduceWave() {
         if (currentWave > 0) {
             currentWave = currentWave - 1;
+        }
+        if (currentWave == 0) {
+            return;
         }
     }
     public void setToMaxWave() {
