@@ -5,14 +5,14 @@ public class Radio {
     public int getCurrentVolume() {
         return currentVolume;
     }
-    public void setCurrentVolume(int newCurrentVolum) {
-        if (newCurrentVolum > 100) {
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume > 100) {
             return;
         }
-        if (newCurrentVolum < 0) {
+        if (newCurrentVolume < 0) {
             return;
         }
-        currentVolume = newCurrentVolum;
+        currentVolume = newCurrentVolume;
     }
     public void increaseVolume() {
         if (currentVolume < 100) {
@@ -55,5 +55,8 @@ public class Radio {
     }
     public void setToMaxWave() {
         currentWave = 9;
+    }
+    public void setToMinWave() {
+        currentWave = 0;
     }
 }
