@@ -3,6 +3,16 @@ package ru.netology.service;
 public class Radio {
     private int currentVolume;
     private int currentWave;
+    private int limitWave;
+
+    public Radio() {
+        this.limitWave = 10;
+    }
+
+    public Radio(int limitWave) {
+        this.limitWave = limitWave;
+    }
+
     public int getCurrentVolume() {
         return currentVolume;
     }
@@ -39,7 +49,7 @@ public class Radio {
         currentVolume = 100;
     }
     public void setCurrentWave(int newCurrentWave) {
-        if (newCurrentWave > 9) {
+        if (newCurrentWave > limitWave - 1) {
             return;
         }
         if (newCurrentWave < 0) {
@@ -48,10 +58,10 @@ public class Radio {
         currentWave = newCurrentWave;
     }
     public void increaseWave() {
-        if (currentWave < 9) {
+        if (currentWave < limitWave - 1) {
             currentWave = currentWave + 1;
         }
-        if (currentWave == 9) {
+        if (currentWave == limitWave - 1) {
             return;
         }
     }
@@ -64,9 +74,32 @@ public class Radio {
         }
     }
     public void setToMaxWave() {
-        currentWave = 9;
+        currentWave = limitWave - 1;
     }
     public void setToMinWave() {
         currentWave = 0;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

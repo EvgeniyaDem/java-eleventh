@@ -156,10 +156,10 @@ public class RadioTest {
     }
     @Test
     public void shouldSetToMaxWave() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
         radio.setToMaxWave();
 
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentWave();
         Assertions.assertEquals(expected, actual);
     }
@@ -172,4 +172,5 @@ public class RadioTest {
         int actual = radio.getCurrentWave();
         Assertions.assertEquals(expected, actual);
     }
+
 }
